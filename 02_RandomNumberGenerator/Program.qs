@@ -2,6 +2,8 @@ namespace RandomNumberGenerator {
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Measurement;
+    open Microsoft.Quantum.Math;
+    open Microsoft.Quantum.Convert;
 
 
     operation GenerateRandomBit() : Result {
@@ -21,7 +23,14 @@ namespace RandomNumberGenerator {
 
         repeat {
 
-            set result += 1;
+            mutable bits = new Result[0];
+
+            for(idxBit in 1..BitSizeI(maxValue)) {
+                set bits += [GenerateRandomBit()];
+            }
+
+            // Convert to positive Integer from string
+            set result = ResultArrayAsInt(bits);
 
         } until (result <= maxValue);
 
