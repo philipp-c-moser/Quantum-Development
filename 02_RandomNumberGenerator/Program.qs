@@ -16,7 +16,10 @@ namespace RandomNumberGenerator {
 
     operation GenerateRandomNumber(maxValue : Int) : Int {
 
-        return 0;
+        // Mutable Variables can change during computation
+        mutable result = 0;
+
+        return result;
 
     }
 
