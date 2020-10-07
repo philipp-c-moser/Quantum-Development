@@ -14,6 +14,11 @@ namespace RandomNumberGenerator {
     }
 
 
+    operation GenerateRandomNumber(maxValue : Int) : Int {
+
+        return 0;
+
+    }
 
 
     @EntryPoint()
@@ -23,6 +28,6 @@ namespace RandomNumberGenerator {
 
         Message($"Random Number between 0 and {maxValue} is: ");
 
-        return 0;
+        return GenerateRandomNumber(maxValue);
     }
 }
