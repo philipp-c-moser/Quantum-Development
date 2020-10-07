@@ -19,6 +19,12 @@ namespace RandomNumberGenerator {
         // Mutable Variables can change during computation
         mutable result = 0;
 
+        repeat {
+
+            set result += 1;
+
+        } until (result <= maxValue);
+
         return result;
 
     }
