@@ -2,9 +2,9 @@ namespace GraphColoringProblem {
     open Microsoft.Quantum.Arrays;
     open Microsoft.Quantum.Convert;
     open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Canon;
     
 
-    @EntryPoint()
     operation SolveGraphColoringProblem() : Unit {
         // Number of Verticles
         let nVerticles = 5;
@@ -22,6 +22,16 @@ namespace GraphColoringProblem {
             Message($"Vertex {i} - color #{colorIndex} ({colors[colorIndex]})");
 
         }
+    }
 
+    @EntryPoint()
+    operation ShowColorEqualityCheck() : Unit {
+
+        using ((c0, c1, target) = (Qubit[2], Qubit[2], Qubit())) {
+        
+            // Quantum-State of all possible colors on c1
+            ApplyToEach(H, c1);
+
+        }
     }
 }
