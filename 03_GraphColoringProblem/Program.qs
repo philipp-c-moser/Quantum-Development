@@ -3,6 +3,7 @@ namespace GraphColoringProblem {
     open Microsoft.Quantum.Convert;
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Diagnostics;
     
 
     operation SolveGraphColoringProblem() : Unit {
@@ -31,6 +32,9 @@ namespace GraphColoringProblem {
         
             // Quantum-State of all possible colors on c1
             ApplyToEach(H, c1);
+
+            Message("The initial state for qbit c1 and target:");
+            DumpRegister((), c1 + [target]);
 
         }
     }
