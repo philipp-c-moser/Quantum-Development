@@ -25,6 +25,12 @@ namespace GraphColoringProblem {
         }
     }
 
+    // Compare registers and mark result in target qbit
+    operation MarkColorEquality(c0 : Qubit[], c1 : Qubit[], target : Qubit) : Unit is Adj+Ctl{
+
+    }
+
+
     @EntryPoint()
     operation ShowColorEqualityCheck() : Unit {
 
@@ -35,6 +41,8 @@ namespace GraphColoringProblem {
 
             Message("The initial state for qbit c1 and target:");
             DumpRegister((), c1 + [target]);
+
+            MarkColorEquality(c0, c1, target);
 
         }
     }
