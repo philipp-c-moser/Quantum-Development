@@ -5,6 +5,10 @@ namespace GraphColoringProblem {
 
     @EntryPoint()
     operation SayHello() : Unit {
-        Message("Hello quantum world!");
+        // Number of Verticles
+        let nVerticles = 5;
+
+        let edges = [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3), (3, 4)];
+
     }
 }
