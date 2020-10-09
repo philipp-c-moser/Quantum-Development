@@ -28,6 +28,21 @@ namespace GraphColoringProblem {
     // Compare registers and mark result in target qbit
     operation MarkColorEquality(c0 : Qubit[], c1 : Qubit[], target : Qubit) : Unit is Adj+Ctl{
 
+        within {
+
+            for ((q0, q1) in Zipped(c0, c1)) {
+
+                // XOR
+                CNOT(q0, q1);
+            }
+
+        } apply {
+
+            // Flip the target-state
+            (ControlledOnInt(0, X))(c1, target);
+
+        }
+
     }
 
 
